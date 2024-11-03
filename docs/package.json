@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Auto-generated docs for @missingnogaming/scarlet-violet-151",
+  "author": "MissingNo. Gaming",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node ./dist/docs/src/main.js"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "22.7.9",
+    "typescript": "5.6.3"
+  }
+}

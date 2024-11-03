@@ -1,0 +1,11 @@
+# Webstorm
+.idea
+
+# Npm
+node_modules
+docs/node_modules
+
+# Build
+dist
+docs/dist
+*.tgz
