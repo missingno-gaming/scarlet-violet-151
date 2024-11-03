@@ -18,15 +18,15 @@ import { Card, Series } from "../../src/types.js";
 
 
 export interface Doc<T extends Series> {
-	filename: string;
-	title: string;
-	description: string;
-	metrics: Metric[];
-	cards: Card<T>[];
+  filename: string;
+  title: string;
+  description: string;
+  metrics: Metric[];
+  cards: Card<T>[];
 }
 
 export interface Metric {
-	title: string;
-	columns: string[];
-	values: string[];
+  title: string;
+  columns: string[];
+  values: string[];
 }

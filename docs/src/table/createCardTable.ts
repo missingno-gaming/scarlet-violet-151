@@ -21,22 +21,22 @@ import { Card, Series } from "../../../src/types.js";
 
 
 export function createCardTable<T extends Series>(cards: Card<T>[]): string {
-	const [cardColumns, variationColumns] = calculateTableColumns(cards);
+  const [cardColumns, variationColumns] = calculateTableColumns(cards);
 
-	const header = createTableHeader([...cardColumns, ...variationColumns]);
+  const header = createTableHeader([...cardColumns, ...variationColumns]);
 
-	const rows = cards.reduce((rows: string[], card: Card<T>) => {
-		card.variations.forEach((variation, index) => {
-			rows.push(createCardTableRow({
-				card: index === 0 ? card : undefined,
-				variation,
-				cardColumns,
-				variationColumns
-			}));
-		});
+  const rows = cards.reduce((rows: string[], card: Card<T>) => {
+    card.variations.forEach((variation, index) => {
+      rows.push(createCardTableRow({
+        card: index === 0 ? card : undefined,
+        variation,
+        cardColumns,
+        variationColumns
+      }));
+    });
 
-		return rows;
-	}, []);
+    return rows;
+  }, []);
 
-	return [header, ...rows].join("\n");
+  return [header, ...rows].join("\n");
 }

@@ -19,7 +19,7 @@ import { createTableRow } from "./createTableRow.js";
 
 
 export function createMetricsTable(columns: string[], values: string[]): string {
-	const header = createTableHeader(columns);
-	const row = createTableRow(values);
-	return [header, row].join("\n");
+  const header = createTableHeader(columns);
+  const row = createTableRow(values);
+  return [header, row].join("\n");
 }

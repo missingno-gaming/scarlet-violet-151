@@ -25,34 +25,34 @@ import { DOCS } from "./constants.js";
 const PATH = join(process.cwd());
 
 DOCS.forEach(doc => {
-	const path = join(PATH, doc.filename);
+  const path = join(PATH, doc.filename);
 
-	const title = `# ${doc.title}`;
-	const description = `${doc.description}`;
-	const metricsTitle = "## Metrics";
-	const metrics = doc.metrics.map(metric => {
-		const title = `### ${metric.title}`;
-		const table = createMetricsTable(metric.columns, metric.values);
-		return [title, table].join("\n\n");
-	}).join("\n\n");
-	const cardsTitle = "## Cards";
-	const cards = createCardTable(doc.cards);
+  const title = `# ${doc.title}`;
+  const description = `${doc.description}`;
+  const metricsTitle = "## Metrics";
+  const metrics = doc.metrics.map(metric => {
+    const title = `### ${metric.title}`;
+    const table = createMetricsTable(metric.columns, metric.values);
+    return [title, table].join("\n\n");
+  }).join("\n\n");
+  const cardsTitle = "## Cards";
+  const cards = createCardTable(doc.cards);
 
-	const content = [
-		title,
-		description,
-		metricsTitle,
-		metrics,
-		cardsTitle,
-		cards
-	].join("\n\n");
+  const content = [
+    title,
+    description,
+    metricsTitle,
+    metrics,
+    cardsTitle,
+    cards
+  ].join("\n\n");
 
-	writeFile(path, content, error => {
-		if (error) {
-			console.error(`Failed to build ${doc.filename}`, error);
-			return;
-		}
+  writeFile(path, content, error => {
+    if (error) {
+      console.error(`Failed to build ${doc.filename}`, error);
+      return;
+    }
 
-		console.log(`Built ${doc.filename}`);
-	});
+    console.log(`Built ${doc.filename}`);
+  });
 });

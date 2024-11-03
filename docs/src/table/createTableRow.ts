@@ -15,5 +15,5 @@
  */
 
 export function createTableRow(values: string[]): string {
-	return `| ${values.join(" | ")} |`;
+  return `| ${values.join(" | ")} |`;
 }

@@ -15,10 +15,10 @@
  */
 
 export function createTableHeader(columns: string[]): string {
-	const formattedColumns = columns.map(col => col[0].toUpperCase() + col.slice(1));
-	const headerRows = [
-		`| ${formattedColumns.join(" | ")} |`,
-		`| ${formattedColumns.map(() => " ---- ").join(" | ")} |`
-	];
-	return headerRows.join("\n");
+  const formattedColumns = columns.map(col => col[0].toUpperCase() + col.slice(1));
+  const headerRows = [
+    `| ${formattedColumns.join(" | ")} |`,
+    `| ${formattedColumns.map(() => " ---- ").join(" | ")} |`
+  ];
+  return headerRows.join("\n");
 }

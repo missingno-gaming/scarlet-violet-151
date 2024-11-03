@@ -18,25 +18,25 @@ import { Card, Series, Variation } from "../../../src/types.js";
 
 
 export function calculateTableColumns<T extends Series>(cards: Card<T>[]): [(keyof Card<T>)[], (keyof Variation<T>)[]] {
-	const cardColumns: Set<keyof Card<T>> = new Set<keyof Card<T>>(["number", "name"]);
-	const variationColumns: Set<keyof Variation<T>> = new Set<keyof Variation<T>>();
+  const cardColumns: Set<keyof Card<T>> = new Set<keyof Card<T>>(["number", "name"]);
+  const variationColumns: Set<keyof Variation<T>> = new Set<keyof Variation<T>>();
 
-	Object.values(cards).forEach((card) => {
-		if (card.rarity !== undefined) cardColumns.add("rarity");
+  Object.values(cards).forEach((card) => {
+    if (card.rarity !== undefined) cardColumns.add("rarity");
 
-		// Only add columns for non-standard variations
-		card.variations.forEach((variation) => {
-			if (variation.art !== "standard") variationColumns.add("art");
-			if (variation.holofoil !== "none") variationColumns.add("holofoil");
-			if (variation.material !== "standard") variationColumns.add("material");
-			if (variation.size !== "standard") variationColumns.add("size");
-			if (variation.stamp !== "none") variationColumns.add("stamp");
-			if (variation.stamp !== "none") variationColumns.add("stamp");
-		});
-	});
+    // Only add columns for non-standard variations
+    card.variations.forEach((variation) => {
+      if (variation.art !== "standard") variationColumns.add("art");
+      if (variation.holofoil !== "none") variationColumns.add("holofoil");
+      if (variation.material !== "standard") variationColumns.add("material");
+      if (variation.size !== "standard") variationColumns.add("size");
+      if (variation.stamp !== "none") variationColumns.add("stamp");
+      if (variation.stamp !== "none") variationColumns.add("stamp");
+    });
+  });
 
-	// Add sources to the end
-	variationColumns.add("sources");
+  // Add sources to the end
+  variationColumns.add("sources");
 
-	return [[...cardColumns], [...variationColumns]];
+  return [[...cardColumns], [...variationColumns]];
 }

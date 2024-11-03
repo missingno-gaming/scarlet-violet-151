@@ -20,64 +20,64 @@ import { Variation } from "./types.js";
 type VariationConst = Omit<Variation<any>, "id">;
 
 export const NON_HOLO: VariationConst = {
-	art: "standard",
-	holofoil: "none",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "standard",
+  holofoil: "none",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;
 
 export const REVERSE_HOLO: VariationConst = {
-	art: "standard",
-	holofoil: "reverse",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "standard",
+  holofoil: "reverse",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;
 
 export const REVERSE_COSMOS_HOLO: VariationConst = {
-	art: "standard",
-	holofoil: "reverse-cosmos",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["costco-mini-tin-five-pack"]
+  art: "standard",
+  holofoil: "reverse-cosmos",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["costco-mini-tin-five-pack"]
 } as const;
 
 export const HOLO: VariationConst = {
-	art: "standard",
-	holofoil: "holo",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "standard",
+  holofoil: "holo",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;
 
 export const COSMOS_HOLO: VariationConst = {
-	art: "standard",
-	holofoil: "cosmos",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "standard",
+  holofoil: "cosmos",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;
 
 export const EX: VariationConst = {
-	art: "standard",
-	holofoil: "ex",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "standard",
+  holofoil: "ex",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;
 
 export const FULL_ART: VariationConst = {
-	art: "full",
-	holofoil: "full-art",
-	material: "standard",
-	size: "standard",
-	stamp: "none",
-	sources: ["booster-pack"]
+  art: "full",
+  holofoil: "full-art",
+  material: "standard",
+  size: "standard",
+  stamp: "none",
+  sources: ["booster-pack"]
 } as const;

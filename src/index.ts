@@ -19,15 +19,15 @@ export { SVE } from "./sve.js";
 export { SVP } from "./svp.js";
 
 export type {
-	Art,
-	Card,
-	Holofoil,
-	Material,
-	Rarity,
-	Series,
-	Size,
-	Source,
-	Stamp,
-	Type,
-	Variation
+  Art,
+  Card,
+  Holofoil,
+  Material,
+  Rarity,
+  Series,
+  Size,
+  Source,
+  Stamp,
+  Type,
+  Variation
 } from "./types.js";

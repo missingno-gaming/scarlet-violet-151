@@ -19,47 +19,47 @@ import { Card, Series, Variation } from "../../../src/types.js";
 
 
 interface Params<T extends Series> {
-	card?: Card<T>;
-	variation: Variation<T>;
-	cardColumns: (keyof Card<T>)[];
-	variationColumns: (keyof Variation<T>)[];
+  card?: Card<T>;
+  variation: Variation<T>;
+  cardColumns: (keyof Card<T>)[];
+  variationColumns: (keyof Variation<T>)[];
 }
 
 export function createCardTableRow<T extends Series>(params: Params<T>): string {
-	const { card, variation, cardColumns, variationColumns } = params;
+  const { card, variation, cardColumns, variationColumns } = params;
 
-	const cardFields: string[] = [];
-	if (card) {
-		cardFields.push(...cardColumns.map(field => {
-			if (card[field]) return card[field].toString();
-			return " ";
-		}));
-	} else {
-		// Add empty columns to simulate a merged row for variations of the same card
-		cardFields.push(...cardColumns.map(() => " "));
-	}
+  const cardFields: string[] = [];
+  if (card) {
+    cardFields.push(...cardColumns.map(field => {
+      if (card[field]) return card[field].toString();
+      return " ";
+    }));
+  } else {
+    // Add empty columns to simulate a merged row for variations of the same card
+    cardFields.push(...cardColumns.map(() => " "));
+  }
 
-	const variationFields: string[] = variationColumns.map(field => {
-		const name = field[0].toUpperCase() + field.slice(1);
-		const value = variation[field] === "none" ? "No" : variation[field];
+  const variationFields: string[] = variationColumns.map(field => {
+    const name = field[0].toUpperCase() + field.slice(1);
+    const value = variation[field] === "none" ? "No" : variation[field];
 
-		if (Array.isArray(value)) return value.join(",");
-		return `${value} ${name}`;
-	});
+    if (Array.isArray(value)) return value.join(",");
+    return `${value} ${name}`;
+  });
 
-	const formattedFields = [...cardFields, ...variationFields].map(field => {
-		if (field.trim().length === 0) return field;
-		// e.g. "booster-pack,elite-trainer-box" -> "Booster pack, Elite Trainer Box"
-		return field.split(",").map(formatField).join(", ");
-	});
+  const formattedFields = [...cardFields, ...variationFields].map(field => {
+    if (field.trim().length === 0) return field;
+    // e.g. "booster-pack,elite-trainer-box" -> "Booster pack, Elite Trainer Box"
+    return field.split(",").map(formatField).join(", ");
+  });
 
-	return createTableRow(formattedFields);
+  return createTableRow(formattedFields);
 }
 
 function formatField(field: string): string {
-	// e.g. "booster-pack" -> "Booster Pack"
-	return field.split("-").map(word => {
-		if (field.split("-").length > 1 && word === "ex") return word;
-		return word[0].toUpperCase() + word.slice(1);
-	}).join(" ");
+  // e.g. "booster-pack" -> "Booster Pack"
+  return field.split("-").map(word => {
+    if (field.split("-").length > 1 && word === "ex") return word;
+    return word[0].toUpperCase() + word.slice(1);
+  }).join(" ");
 }
