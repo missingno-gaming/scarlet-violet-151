@@ -5,7 +5,7 @@
   "author": "MissingNo. Gaming",
   "repository": {
     "type": "git",
-    "url": "https://github.com/missingno-gaming/scarlet-violet-151.git"
+    "url": "git+https://github.com/missingno-gaming/scarlet-violet-151.git"
   },
   "sideEffects": false,
   "type": "module",
