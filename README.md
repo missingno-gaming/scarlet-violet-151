@@ -1,6 +1,9 @@
-# Pokémon Scarlet & Violet - 151
+![Pokemon Scarlet & Violet - 151](https://github.com/user-attachments/assets/1e38a70a-56bd-4a7f-9fef-0fa0e63cb61c)
 
 A fully-typed data library for every card in Pokémon Scarlet & Violet - 151.
+
+Brought to you by [MissingNo. Gaming](https://github.com/missingno-gaming). 
+
 
 ## Cards
 
