@@ -44,17 +44,17 @@ Types for each object and field are exported as well.
 
 ```typescript
 import type {
-	Art,
-	Card,
-	Holofoil,
-	Material,
-	Rarity,
-	Series,
-	Size,
-	Source,
-	Stamp,
-	Type,
-	Variation
+  Art,
+  Card,
+  Holofoil,
+  Material,
+  Rarity,
+  Series,
+  Size,
+  Source,
+  Stamp,
+  Type,
+  Variation
 } from "@missingnogaming/scarlet-violet-151";
 ```
 
@@ -90,12 +90,12 @@ Variations (i.e. reverse holo, stamped, etc.) are a card field.
 ```typescript
 const charmander = MEW["mew-004"];
 charmander.variations.forEach(variation => {
-	console.log(variation.art);      // i.e. "standard", "full", etc.
-	console.log(variation.holofoil); // i.e. "reverse", "cosmos", etc.
-	console.log(variation.material); // i.e. "metal", etc.
-	console.log(variation.size);     // i.e. "jumbo", etc.
-	console.log(variation.stamp);    // i.e. "gamestop", "professor-program", etc.
-	console.log(variation.sources);  // i.e. ["booster-pack", "elite-trainer-box", ...]
+  console.log(variation.art);      // i.e. "standard", "full", etc.
+  console.log(variation.holofoil); // i.e. "reverse", "cosmos", etc.
+  console.log(variation.material); // i.e. "metal", etc.
+  console.log(variation.size);     // i.e. "jumbo", etc.
+  console.log(variation.stamp);    // i.e. "gamestop", "professor-program", etc.
+  console.log(variation.sources);  // i.e. ["booster-pack", "elite-trainer-box", ...]
 });
 ```
 
