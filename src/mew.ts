@@ -2437,13 +2437,13 @@ export const MEW = {
 		rarity: "rare",
 		variations: [
 			{
+				...HOLO,
+				id: "mew-132-std"
+			},
+			{
 				...NON_HOLO,
 				id: "mew-132-nonholo",
 				sources: ["trainers-toolkit-2024"]
-			},
-			{
-				...HOLO,
-				id: "mew-132-std"
 			},
 			{
 				...REVERSE_HOLO,
